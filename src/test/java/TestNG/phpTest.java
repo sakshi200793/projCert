@@ -17,9 +17,11 @@ public class phpTest {
 	  @BeforeMethod
 	  public void launch() {
 		  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		  driver = new ChromeDriver();
+		  ChromeOptions options = new ChromeOptions();
+		  options.addArguments("--headless");
+		  driver = new ChromeDriver(options);
 		  driver.manage().window().maximize();
-		  driver.get("http://35.194.210.186/:9999/");
+		  driver.get("http://35.194.210.186:9999/");
 		  
 	  }
 		
